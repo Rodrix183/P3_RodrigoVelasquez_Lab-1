@@ -84,14 +84,14 @@ void imprimirFigura(int n){
 	for(int i = 0; i < filas; i++){
 		for(int j = 0; j < columnas; j++){	
 		  
-		  if(j >= limite && j >= limiteMayor){
+		  if(j >= limite && j <= limiteMayor){
 			cout<<"*";			  
 		  }else{
 			cout<<"-";
 		  }
 		}			  				
 		cout<<endl;
-		limiteMayor = limiteMayor + 2;
+		limiteMayor = limiteMayor + 1;
 		limite= limite-1;		
 	}
 }
