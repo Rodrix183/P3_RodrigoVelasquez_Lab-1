@@ -6,7 +6,8 @@ using std::cout;
 using std::endl;
 
 void imprimirFigura(int);
-void log(double,double,double);
+void log(int);
+void func(double,double,double);
 int main(){
 	int resp = 0;
 	do{
@@ -31,7 +32,7 @@ int main(){
 		  int num = 0;
 		  cout<<"Ingrese un numero: "<<endl;
 		  cin>>num;
-		  
+		  log(num);
 		}
 		break;
 
@@ -54,7 +55,7 @@ int main(){
 			cin>>y;			
 			}while(y<0);
 
-			log(m,p,y);
+			func(m,p,y);
 		
 		}
 		break;
@@ -76,26 +77,43 @@ void imprimirFigura(int n){
 	int columnas = 0;
 	columnas = (2 * filas)-1;
 	int limite = 0;
-	limite; 
+	limite = filas;
+	int cont = 0; 
+	int limiteMayor = 0;
+	limiteMayor = filas;
 	for(int i = 0; i < filas; i++){
-		for(int j = 0; j < columnas; j++){
-		 // cout<<"*";
-		  if(j<i){
-			cout<<" ";	
+		for(int j = 0; j < columnas; j++){	
+		  
+		  if(j >= limite && j >= limiteMayor){
+			cout<<"*";			  
 		  }else{
-			cout<<"*";
+			cout<<"-";
 		  }
-		}
+		}			  				
 		cout<<endl;
+		limiteMayor = limiteMayor + 2;
+		limite= limite-1;		
 	}
 }
 
-void log(double m,double x,double y){
+void log(int num){
+	int cont1 = 0;
+	int cont2 = 0;
+	do{
+
+	num = num/10;
+	
+	}while(num>10);
+
+
+}
+
+void func(double m,double x,double y){
 	double resp = 0;
 	double centinela = 0;
 	centinela = x;
 	do{
-		resp = sqrt (x);
+		resp = (sqrt (x))*m;
 		cout<<"Aproximacion de "<<x<<" es: "<<resp<<endl;
 		//resp = sqrt (x);
 		//if(resp <= y){
